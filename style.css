@@ -16,7 +16,7 @@ h1 span {
 }
 
 input {
-margin: 0 auto 020px auto;
+margin: 0 auto 20px auto;
 display: block;
 padding: 5px;
 width: 300px;
@@ -31,6 +31,7 @@ body {
   text-align: center;
 }
 
+
 #userGuess {
   color: #ED458B;
   font-size: 10em;
@@ -38,33 +39,21 @@ body {
   margin: -20px;
   padding-top: -200px;
 }
-.guess-button {
-  background-color: #D0D2D3;
-  border-radius: 20px;
-  color: white;
-  padding: 5px 60px;
-  margin-right: .5%;
-  border: none;
-}
 
-.clear-button {
+button {
+  background-color: #929497;
   color: white;
-  background-color: #D0D2D3;
+  border: none;
   border-radius: 20px;
   padding: 5px 60px;
-  border: none;
 }
 
 .resetButton {
-  color: white;
-  background-color: #D0D2D3;
-  border-radius: 20px;
   padding: 5px 150px; 
-  border: none;
 }
 
 button:focus {
-  outline:0; 
+  outline: 0; 
 }
 
 input:focus {

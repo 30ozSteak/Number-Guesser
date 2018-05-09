@@ -12,35 +12,30 @@
 
 <body>
   <header>
-    <h1><span id="number">Number</span>Guesser</h1>
+    <h1>
+      <span id="number">Number</span>Guesser</h1>
   </header>
   <form>
-    <!-- Input box -->
     <div class="inputBox">
-      <input type="text" placeholder="Enter your guess" class="guessInput" id="guessInput" required>
+      <input type="number" placeholder="Enter your guess" class="guessInput" id="guessInput" min="1" max="100">
     </div>
     <br>
-    <!-- Input box -->
-
-    <!-- Submit / Clear buttons -->
     <button class="guess-button" disabled=true>Guess</button>
     <button class="clear-button" disabled=true>Clear</button>
-
     <p class="last-guess-text">Enter a Number</p>
     <p id="userGuess">🔥</p>
-
     <p id="userFeedback">Between 1 - 100 to play!</p>
     <br>
   </form>
-  <button class="resetButton">Reset</button>
-  <p> You're on Attempt <span> 1 </span> of <span>3</span></p>
+  <button class="resetButton" disabled=true>Reset</button>
+  <p> You're on Attempt
+    <span class="attemptNummber"> 1 </span> of
+    <span>3</span>
+  </p>
   <script src="script.js"></script>
 </body>
-
 </html>
 
 <!-- consider changing the p tags to something.... better like h2 or h3 tags-->
-
-<!-- establish a main css styling for all the buttons at once-->
 
 <!-- make sure everything is wrapped inside of boxes <main> <article> etc -->
