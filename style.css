@@ -1,0 +1,84 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+h1 {
+  background-color: #404041;
+  color: #e6e7e8;
+  padding: 20px;
+  font-weight: 300;
+  font-size: 3.0em;
+  margin: -10px -10px 30px -10px
+}
+
+h1 span {
+ color: #ED458B;
+ font-weight: 700;
+}
+
+input {
+margin: 0 auto 020px auto;
+display: block;
+padding: 5px;
+width: 300px;
+}
+
+p {
+  color: #404041;
+  font-weight: 300;
+}
+
+body {
+  text-align: center;
+}
+
+#userGuess {
+  color: #ED458B;
+  font-size: 10em;
+  font-weight: light;
+  margin: -20px;
+  padding-top: -200px;
+}
+.guess-button {
+  background-color: #D0D2D3;
+  border-radius: 20px;
+  color: white;
+  padding: 5px 60px;
+  margin-right: .5%;
+  border: none;
+}
+
+.clear-button {
+  color: white;
+  background-color: #D0D2D3;
+  border-radius: 20px;
+  padding: 5px 60px;
+  border: none;
+}
+
+.resetButton {
+  color: white;
+  background-color: #D0D2D3;
+  border-radius: 20px;
+  padding: 5px 150px; 
+  border: none;
+}
+
+button:focus {
+  outline:0; 
+}
+
+input:focus {
+  outline: 0;
+}
+
+button:hover {
+  background-color: #EB008B
+}
+
+button:active {
+  background-color: #929497;
+}
+
+button:disabled {
+  background-color: #D0d2d3;
+}
