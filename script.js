@@ -17,10 +17,16 @@ location.reload();
 function clearUserInput() {
   event.preventDefault();
   guessInput.value = "";
+  disableButtons();
+}
+function disableButtons(){
+  guessButton.disabled=true;
+  clearButton.disabled=true;
 }
 
-function changeButtonStatus(btn){
-  guessButton.disabled = true;
+function enableButtons(){
+  guessButton.disabled=false;
+  clearButton.disabled=false;
 }
 
 function displayUserGuess() {
@@ -32,9 +38,6 @@ function displayUserGuess() {
   { lastGuess.innerText = 'Your guess was'; hint.innerText = 'That\'s too high' };
   if (parsedNumber < genNumber) 
   { lastGuess.innerText = 'Your guess was'; hint.innerText = 'That\'s too low' };
-  if (parsedNumber < 1 || parsedNumber > 100)
-  { lastGuess.innerText = 'Please input a number'; hint.innerText = 'Between 1 and 100'
-  }
 }
 
 guessButton.addEventListener('click', function (event) {
@@ -42,13 +45,10 @@ guessButton.addEventListener('click', function (event) {
   document.getElementById('userGuess').innerHTML = guessInput.value;
 });
 
-userGuess.addEventListener('keyup', function(){
-  console.log('change');
-
-});
+userGuess.addEventListener('input', function(){
+  enableButtons()
+  });
 
 console.log(genNumber);
 
 //make a min and max for range in the input field HTML or in JS (multiple ways of doing it)//omne way of doing it gives you an automatic alert if you go outside the range and the other doesnt
-
-// make a function that disables buttons if theres nothing on input or hardcode it into the button itself, add an event listener that when you click on the input field annd checks to see if there's a;
