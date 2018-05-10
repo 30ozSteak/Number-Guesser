@@ -5,11 +5,17 @@ var genNumber = Math.floor(Math.random() * 101);
 var guessButton = document.querySelector(".guess-button");
 var hint = document.querySelector("#userFeedback");
 var lastGuess = document.querySelector(".last-guess-text");
-var playerTurn = document.querySelector(".player-number")
+var multiButts = document.querySelector(".enableMultiplayerButton");
+var playerTurn = document.querySelector(".player-number");
 var resetGame = document.querySelector(".resetButton");
 var userGuess = document.querySelector(".guessInput");
 
 clearButton.addEventListener("click", clearUserInput);
+
+multiButts.addEventListener("click", function() {
+  toggleMultiplayer();
+});
+
 resetGame.addEventListener("click", function() {
   location.reload();
 });
@@ -17,7 +23,8 @@ resetGame.addEventListener("click", function() {
 guessButton.addEventListener("click", function(event) {
   displayUserGuess();
   event.preventDefault();
-  if (counter <= 3) {
+  togglePlayerOne();
+  if (counter <= 6) {
     document.querySelector(".attemptNumber").innerText = counter;
     counter++;
   } else {
@@ -29,6 +36,29 @@ guessButton.addEventListener("click", function(event) {
 userGuess.addEventListener("input", function() {
   enableButtons();
 });
+
+function displayUserGuess() {
+  var number = userGuess.value;
+  var parsedNumber = parseInt(number);
+  document.getElementById("user-Guess").innerHTML = guessInput.value;
+
+  if (parsedNumber === genNumber) {
+    lastGuess.innerText = "🔥BOOM!🔥";
+    hint.innerText = "Gj Fam you did it";
+  }
+  if (parsedNumber > genNumber) {
+    lastGuess.innerText = "Your guess was";
+    hint.innerText = "That's too high";
+  }
+  if (parsedNumber < genNumber) {
+    lastGuess.innerText = "Your guess was";
+    hint.innerText = "That's too low";
+  }
+  if (parsedNumber > 100 || parsedNumber < 0) {
+    lastGuess.innerText = "😡😡Hey, I said between 0-100😡😡";
+    document.querySelector(".userGuessDisplay").innerText = "???";
+  }
+}
 
 function clearUserInput() {
   event.preventDefault();
@@ -47,29 +77,17 @@ function enableButtons() {
   resetGame.disabled = false;
 }
 
-function displayUserGuess() {
-  var number = userGuess.value;
-  var parsedNumber = parseInt(number);
-  document.getElementById("userGuess").innerHTML = guessInput.value;
+function toggleMultiplayer() {
+  console.log("butts");
+  var element = document.getElementById("players");
+  element.classList.toggle("multiplayers");
+}
 
-  if (parsedNumber === genNumber) {
-    lastGuess.innerText = "BOOM!";
-    hint.innerText = "Gj Fam you did it";
-  }
-  if (parsedNumber > genNumber) {
-    lastGuess.innerText = "Your guess was";
-    hint.innerText = "That's too high";
-  }
-  if (parsedNumber < genNumber) {
-    lastGuess.innerText = "Your guess was";
-    hint.innerText = "That's too low";
-  }
-  if (parsedNumber > 100 || parsedNumber < 0) {
-    lastGuess.innerText = "Hey, I said between 0-100";
-    document.querySelector(".userGuessDisplay").innerText = "???";
-  }
+function togglePlayerOne() {
+  var element = document.getElementById("player1");
+  element.classList.toggle("inactivePlayerButton");
+  var element = document.getElementById("player2");
+  element.classList.toggle("activePlayerButton");
 }
 
 console.log(genNumber);
-
-// add anon function that runs both

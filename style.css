@@ -31,7 +31,7 @@ body {
   text-align: center;
 }
 
-#userGuess {
+#user-Guess {
   color: #ed458b;
   font-size: 10em;
   font-weight: light;
@@ -47,8 +47,34 @@ button {
   padding: 5px 60px;
 }
 
+section button {
+  padding: 50px 30px;
+  margin: 0px 30px;
+  background-color: #929497;
+}
+
+.activePlayerButton {
+  background-color: #ed458b;
+}
+
+.inactivePlayerButton {
+  background-color: #929497;
+}
+.footer {
+  background-color: #404041;
+  color: #e6e7e8;
+  font-weight: 300;
+  margin: 20px -10px 30px -10px;
+  padding: 20px;
+}
+
 .resetButton {
   padding: 5px 150px;
+}
+
+.enableMultiplayerButton {
+  padding: 5px 135px;
+  margin: 10px;
 }
 
 button:focus {
@@ -69,4 +95,16 @@ button:active {
 
 button:disabled {
   background-color: #d0d2d3;
+}
+
+section {
+  display: inline;
+}
+
+.multiplayers {
+  display: none;
+}
+
+i {
+  color: white;
 }

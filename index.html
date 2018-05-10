@@ -8,6 +8,8 @@
   <title>Title</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+    crossorigin="anonymous">
 </head>
 
 <body>
@@ -16,35 +18,44 @@
       <span id="number">Number</span>Guesser</h1>
   </header>
   <main>
-  <form>
-    <div class="inputBox">
-      <input type="number" placeholder="Enter your guess" class="guessInput" id="guessInput" min="1" max="100">
-    </div>
+    <form>
+      <div class="inputBox">
+        <input type="number" placeholder="Enter your guess" class="guessInput" id="guessInput" min="1" max="100" value "none">
+      </div>
+      <br>
+      <button class="guess-button" disabled=true>Guess</button>
+      <button class="clear-button" disabled=true>Clear</button>
+      <p class="last-guess-text">Enter a Number</p>
+      <p id="user-Guess" class="userGuessDisplay">???</p>
+      <p id="userFeedback">Between 1 - 100 to play!</p>
+      <br>
+    </form>
+    <button class="resetButton" disabled=true>Reset</button>
     <br>
-    <button class="guess-button" disabled=true>Guess</button>
-    <button class="clear-button" disabled=true>Clear</button>
-    <p class="last-guess-text">Enter a Number</p>
-    <p id="userGuess" class="userGuessDisplay">???</p>
-    <p id="userFeedback">Between 1 - 100 to play!</p>
-    <br>
-  </form>
-  <button class="resetButton" disabled=true>Reset</button>
-</main>
-  <p> You're on attempt
-    <span class="attemptNumber"> 1 </span> of <span>3</span>
+    <button class="enableMultiplayerButton" id="multiplayerButton" enabled="true">Multiplayer</button>
+  </main>
+  <p> Round
+    <span class="attemptNumber"> 1 </span> of
+    <span>6</span>
   </p>
-  <p>
-    It's <span> Player <span class="player-number">1</span>'s Turn</span>
-  </p>
-  <script src="script.js"></script>
+  <section class="container">
+    <section id="players" class="multiplayers">
+      <button id="player1" class="playerOne activePlayerButton">Player One</button>
+      <section> VS </section>
+      <button id="player2">Player Two</button>
+    </section>
+    <script src="script.js"></script>
+  </section>
 </body>
+<footer>
+  <div class="footer">
+    Made with moderate care by Nick Dambrosio
+    <a href="https://github.com/imsteaky">
+      <i class="fab fa-github-alt"></i>
+    </a>
+  </div>
+</footer>
 
 </html>
 
-<!-- consider changing the p tags to something.... better like h2 or h3 tags-->
-
-<!-- make sure everything is wrapped inside of boxes <main> <article> etc -->
-
-  <!-- add accessibility-->
-  <!-- multiplayer toggle classes -->
-  <!-- min max range -->
+<!-- add accessibility-->
