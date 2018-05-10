@@ -1,21 +1,29 @@
+var attempts = document.querySelector(".attemptNumber");
 var clearButton = document.querySelector(".clear-button");
+var counter = 2;
 var genNumber = Math.floor(Math.random() * 101);
 var guessButton = document.querySelector(".guess-button");
 var hint = document.querySelector("#userFeedback");
 var lastGuess = document.querySelector(".last-guess-text");
+var playerTurn = document.querySelector(".player-number")
 var resetGame = document.querySelector(".resetButton");
 var userGuess = document.querySelector(".guessInput");
-var attempts = document.querySelector(".attemptNumber")
 
 clearButton.addEventListener("click", clearUserInput);
-guessButton.addEventListener("click", displayUserGuess);
 resetGame.addEventListener("click", function() {
   location.reload();
 });
 
 guessButton.addEventListener("click", function(event) {
+  displayUserGuess();
   event.preventDefault();
-  document.getElementById("userGuess").innerHTML = guessInput.value;
+  if (counter <= 3) {
+    document.querySelector(".attemptNumber").innerText = counter;
+    counter++;
+  } else {
+    alert("\t \t \t 😬Game Over. Smash that reset button.😬");
+    document.querySelector(".userGuessDisplay").innerText = "???";
+  }
 });
 
 userGuess.addEventListener("input", function() {
@@ -42,6 +50,8 @@ function enableButtons() {
 function displayUserGuess() {
   var number = userGuess.value;
   var parsedNumber = parseInt(number);
+  document.getElementById("userGuess").innerHTML = guessInput.value;
+
   if (parsedNumber === genNumber) {
     lastGuess.innerText = "BOOM!";
     hint.innerText = "Gj Fam you did it";
@@ -54,13 +64,12 @@ function displayUserGuess() {
     lastGuess.innerText = "Your guess was";
     hint.innerText = "That's too low";
   }
+  if (parsedNumber > 100 || parsedNumber < 0) {
+    lastGuess.innerText = "Hey, I said between 0-100";
+    document.querySelector(".userGuessDisplay").innerText = "???";
+  }
 }
-
-// //WIP, get user attempts to display on screen 1 - 3
-// for (var i = 0; i < 3; i++){
-//   attempts.innerText[i]
-// };
 
 console.log(genNumber);
 
-//make a min and max for range in the input field HTML or in JS (multiple ways of doing it)//omne way of doing it gives you an automatic alert if you go outside the range and the other doesnt
+// add anon function that runs both
