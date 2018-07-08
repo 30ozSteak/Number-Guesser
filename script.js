@@ -1,7 +1,5 @@
 var attempts = document.querySelector(".attemptNumber");
 var clearButton = document.querySelector(".clear-button");
-var counter = 2;
-var genNumber = Math.floor(Math.random() * 101);
 var guessButton = document.querySelector(".guess-button");
 var hint = document.querySelector("#userFeedback");
 var lastGuess = document.querySelector(".last-guess-text");
@@ -10,11 +8,12 @@ var playerTurn = document.querySelector(".player-number");
 var resetGame = document.querySelector(".resetButton");
 var userGuess = document.querySelector(".guessInput");
 
+var counter = 2;
+var genNumber = Math.floor(Math.random() * 101);
+
 clearButton.addEventListener("click", clearUserInput);
 
-multiButts.addEventListener("click", function() {
-  toggleMultiplayer();
-});
+multiButts.addEventListener("click", toggleMultiplayer);
 
 resetGame.addEventListener("click", function() {
   location.reload();
@@ -78,7 +77,6 @@ function enableButtons() {
 }
 
 function toggleMultiplayer() {
-  console.log("butts");
   var element = document.getElementById("players");
   element.classList.toggle("multiplayers");
 }
